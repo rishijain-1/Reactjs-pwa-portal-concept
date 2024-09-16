@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
+import Overlays from './components/Overlays';
+
 interface Pokemon {
   id: number;
   name: string;
@@ -24,20 +26,26 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <h1>Pokémon List</h1>
-      <div className="pokemon-list">
-        {pokemonData.map((pokemon) => (
-          <div key={pokemon.id} className="pokemon-card">
-            <img
-              src={pokemon.sprites.front_default}
-              alt={pokemon.name}
-            />
-            <p>{pokemon.name}</p>
+    <> 
+     <Overlays /> 
+        <div className="container">
+         
+          <h1>Pokémon List</h1>
+          <div className="pokemon-list">
+            {pokemonData.map((pokemon) => (
+              <div key={pokemon.id} className="pokemon-card">
+                <img
+                  src={pokemon.sprites.front_default}
+                  alt={pokemon.name}
+                />
+                <p>{pokemon.name}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+        
+    </>
+   
   );
 }
 
