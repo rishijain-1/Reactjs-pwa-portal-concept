@@ -19,7 +19,7 @@ const Overlays = () => {
   }, []);
 
   return createPortal(
-    <div className="overlay-container">
+    <div className="containers">
       <div className="card">
         <h1 className="card-title">Welcome to Pokémon World</h1>
         <p className="card-text">Catch 'em all! Explore and enjoy your adventure.</p>
